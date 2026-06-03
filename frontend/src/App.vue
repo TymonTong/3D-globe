@@ -365,7 +365,7 @@ function initScene() {
     uHoverOpacity: { value: 0.8 },
   }
   sphereMesh = new THREE.Mesh(sphereGeom, new THREE.ShaderMaterial({
-    vertexShader, fragmentShader, uniforms, side: THREE.FRONT,
+    vertexShader, fragmentShader, uniforms, side: THREE.FrontSide,
   }))
   globeGroup.add(sphereMesh)
   globeGroup.rotation.y = THREE.MathUtils.degToRad(70)
