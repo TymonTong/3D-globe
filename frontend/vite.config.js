@@ -26,7 +26,11 @@ const WS = `ws://127.0.0.1:${BACKEND_PORT}`;
 //     agent flow needs HMR, set ``HMR_BASE`` env via spawn.sh and
 //     re-enable here using the same ``server.hmr.path`` shape AWS S3
 //     presigned URLs / Vercel preview deployments use.
+// GitHub Pages 项目站地址为 https://<user>.github.io/<repo>/
+const repoBase = "/test-globle/";
+
 export default defineConfig({
+  base: process.env.GITHUB_PAGES === "true" ? repoBase : "/",
   plugins: [vue()],
   server: {
     host: "0.0.0.0",

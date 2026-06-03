@@ -372,7 +372,7 @@ function initScene() {
 
   scene.add(new THREE.AmbientLight(0xffffff, 1))
 
-  fetch('/ne_110m_admin_0_countries.json').then(r => r.json()).then(data => {
+  fetch(`${import.meta.env.BASE_URL}ne_110m_admin_0_countries.json`).then(r => r.json()).then(data => {
     geojsonData = data
     drawIdMap(idCtx, ID_W, ID_H)
     drawCountryMask(maskCtx, TEX_W, TEX_H)
